@@ -177,7 +177,7 @@
         }
       },
       {
-        "HashCode": 798328690,
+        "HashCode": -515210724,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Pages.Pedido",
         "AssemblyName": "Miguel-P1-AP2",
@@ -188,6 +188,14 @@
           }
         ],
         "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "articuloId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "articuloId"
+            }
+          },
           {
             "Kind": "Components.Component",
             "Name": "pedidoId",
@@ -203,7 +211,7 @@
         }
       },
       {
-        "HashCode": -821772085,
+        "HashCode": -38019481,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Pages.Pedido",
         "AssemblyName": "Miguel-P1-AP2",
@@ -214,6 +222,14 @@
           }
         ],
         "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "articuloId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "articuloId"
+            }
+          },
           {
             "Kind": "Components.Component",
             "Name": "pedidoId",

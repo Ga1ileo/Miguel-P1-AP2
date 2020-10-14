@@ -21,7 +21,8 @@
                             <div class="form-group">
                                 <label>Pedido ID:</label>
                                 <div class="input-group">
-                                    
+                                    <InputNumber @bind-Value="pedido.PedidoId" class="form-control col-4" />
+                                    <ValidationMessage For="(() => pedido.PedidoId)"></ValidationMessage>
                                 </div>
                             </div>
                         </div>
@@ -42,6 +43,10 @@
 @code {
 
     Pedidos pedido = new Pedidos();
+    Articulos articulo = new Articulos();
+
+    [Parameter]
+    public int articuloId {get; set;}
 
     [Parameter]
     public int pedidoId { get; set; }
@@ -64,6 +69,10 @@
     {
         this.pedido = new Pedidos();
     }
+
+    //Articulos
+
+
 
 }
 
