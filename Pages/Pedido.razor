@@ -1,0 +1,76 @@
+@page "/pedido"
+@page "/pedido/{pedidoId:int}"
+
+@using Miguel_P1_AP2.Models
+@using Miguel_P1_AP2.BLL
+
+@inject IToastService toast
+
+<EditForm Model="pedido">
+    <DataAnnotationsValidator/>
+    <div class="card">
+
+            <div class="card-header">
+                <h3>Registro de Pedidos</h3>
+            </div>
+
+            <div class="card-body">
+                <form>
+                    <div class="form-row align-items-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Pedido ID:</label>
+                                <div class="input-group">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="card-footer">
+                <div class="form-group text-center" display: inline-block>
+                    
+                </div>
+            </div>
+
+        </div>
+</EditForm>
+
+@code {
+
+    Pedidos pedido = new Pedidos();
+
+    [Parameter]
+    public int pedidoId { get; set; }
+
+     protected override void OnInitialized()
+    {
+        Nuevo();
+        Pedidos auxPedido;
+        if (pedidoId > 0)
+        {
+            auxPedido = PedidosBLL.Buscar(pedidoId);
+            if (auxPedido != null)
+                pedido = auxPedido;
+            else
+                toast.ShowInfo("No encontrado..");
+        }
+    }
+
+    private void Nuevo()
+    {
+        this.pedido = new Pedidos();
+    }
+
+}
+
+
+
+
+
+
+
+}

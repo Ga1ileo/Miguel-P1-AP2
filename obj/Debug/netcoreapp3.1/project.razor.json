@@ -45,39 +45,6 @@
         }
       },
       {
-        "HashCode": -1303652294,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ConsultaArticulo"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
-        }
-      },
-      {
-        "HashCode": -919598262,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -534367861,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Pages.Counter",
@@ -173,6 +140,92 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Miguel_P1_AP2.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1303652294,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ConsultaArticulo"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
+        }
+      },
+      {
+        "HashCode": -919598262,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 798328690,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.Pedido",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Pedido"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "pedidoId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "pedidoId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.Pedido"
+        }
+      },
+      {
+        "HashCode": -821772085,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.Pedido",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Pages.Pedido"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "pedidoId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "pedidoId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.Pedido",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15099,6 +15152,11 @@
       "FilePath": "/Users/miguelgondres/Projects/Miguel-P1-AP2/Pages/_Host.cshtml",
       "TargetPath": "Pages\\_Host.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/miguelgondres/Projects/Miguel-P1-AP2/Pages/Pedido.razor",
+      "TargetPath": "Pages\\Pedido.razor",
+      "FileKind": "component"
     },
     {
       "FilePath": "/Users/miguelgondres/Projects/Miguel-P1-AP2/Shared/SurveyPrompt.razor",
