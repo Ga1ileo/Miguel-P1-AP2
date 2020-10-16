@@ -15,7 +15,7 @@ namespace Miguel_P1_AP2.BLL
 
         public static bool Guardar(Pedidos pedido)
         {
-            if (!Existe(pedido.ArticuloId))
+            if (!Existe(pedido.PedidoId))
 
                 return Insertar(pedido);
             else

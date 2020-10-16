@@ -144,39 +144,6 @@
         }
       },
       {
-        "HashCode": -1303652294,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ConsultaArticulo"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
-        }
-      },
-      {
-        "HashCode": -919598262,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -515210724,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Pages.Pedido",
@@ -242,6 +209,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Miguel_P1_AP2.Pages.Pedido",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1276256537,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ConsultaArticulo"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "PedidoId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "PedidoId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
+        }
+      },
+      {
+        "HashCode": 1785522924,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Pages.ConsultaArticulo"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "PedidoId",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "PedidoId"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaArticulo",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

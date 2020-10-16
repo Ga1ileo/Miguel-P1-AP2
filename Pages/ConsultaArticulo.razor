@@ -1,49 +1,57 @@
 @page "/consultaArticulo"
 
+
 @using Miguel_P1_AP2.Models
 @using Miguel_P1_AP2.BLL
 @using Miguel_P1_AP2.DAL
 
 @inject IToastService toast
+<div class="col-6">
+    <h6>Numero de Pedidos: @NumeroPedido</h6> 
+</div>
+
 
 <div class="card">
 
         <div class="card-header">
             <h3>Consulta de Articulos</h3>
         </div>
-
+        
         <div class="card-body">
             <div class="form-group">
                 <div class="form-row">
                     <div class="input-group">
                         <div class="col-6">
-                                <select class="form-control" @bind="filtro">
-                                    <option value="0">Filtrar por Departamentos</option>
-                                    <option value="1">Todos</option>
-                                </select>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="0" @bind="filtro" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">Filtrar por departamentos</label>
+                            </div>
 
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Escribir Departamento" @bind="criterio" />
+                                <select class="form-control" @bind="filtro">
+                                    <option value="0">Tecnologia</option>
+                                    <option value="1">Ferreteria</option>
+                                </select>
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-primary" @onclick="ConsultarDepartamentos">V</button>
                                 </div>
-                            </div>   
+                            </div>
                         </div>
 
                         <div class="col-6">
                             <h5>Filtrar por Descripción</h5>
-                                @* <select class="form-control" @bind="filtro">
-                                    <option value="0">Descripcion</option>
-                                </select> *@
+                            @* <select class="form-control" @bind="filtro">
+                                        <option value="0">Descripcion</option>
+                                    </select> *@
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Escribir Descripcion" @bind="criterioDescripcion" />
+                                <input type="text" class="form-control" placeholder="Escribir Descripcion" @bind="criterioDescripcion"/>
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-primary" @onclick="ConsultarDescripcion">Buscar</button>
                                 </div>
-                            </div>   
+                            </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>
@@ -51,56 +59,88 @@
 
         <table class="table">
             <thead class="thead-light">
-                <tr>
-                    <th>ArticuloId</th>
-                    <th>Referencia</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Existencia</th>
-                    <th>Cantidad</th>
-                    <th>  </th>
-                </tr>
+            <tr>
+                <th>ArticuloId</th>
+                <th>Referencia</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Existencia</th>
+                <th>Cantidad</th>
+                <th> </th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var item in lista)
-                {
-                    <tr>
-                        <td>@item.ArticuloId</td>
-                        <td>@item.Referencia</td>
-                        <td>@item.Descripcion</td>
-                        <td>@item.Precio</td>
-                        <td>@item.Existencia</td>
-                        <td><input type="text" class="form-control" placeholder="Cantidad"/></td>
-                        <a href="/pedido/@item.ArticuloId">Pedir</a>
-                    </tr>
-                }
+            @foreach (var item in lista)
+            {
+                <tr>
+                    <td>@item.ArticuloId</td>
+                    <td>@item.Referencia</td>
+                    <td>@item.Descripcion</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Existencia</td>
+                    <td><input type="number" class="form-control" placeholder="Cantidad"/></td>
+                    <td><button type="submit" class="btn btn-lg btn-success" @onclick="Pedir">Pedir</button></td>
+                </tr>
+            }
             </tbody>
-
         </table>
-
 </div>
 
 @code {
+    Articulos articulo = new Articulos();
     public int filtro { get; set; }   //departamento
     public string criterio { get; set; } //departamento
+    
     public int filtroDescripcion { get; set; }   //Descripcion
     public string criterioDescripcion { get; set; } //Descripcion
+    
+    public decimal cantidad { get; set; }
+    
+
     public List<Articulos> lista = new List<Articulos>();
-    public List<Departamentos> listaDep = new List<Departamentos>();
-    public decimal total { get; set; }
+    
+    //Pedidos
+    Pedidos pedido = new Pedidos();
+    [Parameter]
+    public int PedidoId { get; set; }
+    private List<Pedidos> listaPedido = new List<Pedidos>();
+    
+
+    private void Nuevo()
+    {
+        this.pedido = new Pedidos();
+    }
+
+    //Metodo que pide un Articulo
+    private void Pedir()
+    {
+        bool paso;
+        paso = PedidosBLL.Guardar(pedido);
+
+        if (paso)
+        {
+            Nuevo();
+            NumeroDePedido();
+            Console.WriteLine("Guardado Correctamente");
+        }
+        else
+        {
+            Console.WriteLine("No fue posible guardar");
+        }
+    }
+
 
     private void ConsultarDepartamentos()
     {
-        Departamentos departamentos = new Departamentos();
         try
         {
             switch (filtro)
             {
                 case 0: //Departamentos
-                    this.lista = ArticulosBLL.GetList(p => p.Departamento == criterio);
+                    this.lista = ArticulosBLL.GetList(p => p.DepartamentoId == 1);
                     break;
                 case 1: //Todos
-                    this.lista = ArticulosBLL.GetList(p => true);
+                    this.lista = ArticulosBLL.GetList(p => p.DepartamentoId == 2);
                 break;
             }
         }
@@ -113,7 +153,6 @@
 
     private void ConsultarDescripcion()
     {
-        Departamentos departamentos = new Departamentos();
         try
         {
             switch (filtroDescripcion)
@@ -129,112 +168,11 @@
             throw;
         }
     }
+    
+    private int NumeroPedido = 0;
 
-   
-
-    private int GetId()
+    private void NumeroDePedido()
     {
-        int resultado = 0;
-
-        try
-        {
-            resultado = Convert.ToInt32(criterio);
-            return resultado;
-        }
-        catch (Exception)
-        {
-
-            toast.ShowError("El Id debe ser numerico..");
-        }
-
-        return resultado;
+        NumeroPedido++;
     }
-
-    private int GetDepartamentoId()
-    {
-        int resultado = 0;
-
-        try
-        {
-            resultado = Convert.ToInt32(criterio);
-            return resultado;
-        }
-        catch (Exception)
-        {
-
-            toast.ShowError("El Id debe ser numerico..");
-        }
-
-        return resultado;
-    }
-
-    private int GetExistencia()
-    {
-        int existencia = 0;
-
-        try
-        {
-            existencia = Convert.ToInt32(criterio);
-            return existencia;
-        }
-        catch (Exception)
-        {
-
-            toast.ShowError("La existencia debe ser numerico..");
-        }
-
-        return existencia;
-    }
-
-    private decimal GetCosto()
-    {
-        decimal costo = 0;
-
-        try
-        {
-            costo = Convert.ToDecimal(criterio);
-            return costo;
-        }
-        catch (Exception)
-        {
-
-            toast.ShowError("El costo debe ser numerico..");
-        }
-
-        return costo;
-    }
-
-    private decimal GetValorInventario()
-    {
-        decimal valor = 0;
-
-        try
-        {
-            valor = Convert.ToDecimal(criterio);
-            return valor;
-        }
-        catch (Exception)
-        {
-
-            toast.ShowError("El valor debe ser numerico..");
-        }
-
-        return valor;
-    }
-
-    /* private void Sumar()
-    {
-        decimal auxValor = 0;
-        if (lista != null)
-        {
-            foreach (var item in lista)
-            {
-                auxValor += item.valorInventario;
-            }
-
-            total = auxValor;
-        }
-
-    }  */
-
 }
