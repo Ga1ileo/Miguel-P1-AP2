@@ -213,6 +213,39 @@
         }
       },
       {
+        "HashCode": -403259632,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaPedido",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ConsultaPedido"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaPedido"
+        }
+      },
+      {
+        "HashCode": -496716339,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Pages.ConsultaPedido",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Pages.ConsultaPedido"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Pages.ConsultaPedido",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1276256537,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Pages.ConsultaArticulo",
@@ -362,39 +395,6 @@
         }
       },
       {
-        "HashCode": -1501135517,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Shared.NavMenu",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": 75565181,
-        "Kind": "Components.Component",
-        "Name": "Miguel_P1_AP2.Shared.NavMenu",
-        "AssemblyName": "Miguel-P1-AP2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Miguel_P1_AP2.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -1152375552,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Shared.SurveyPrompt",
@@ -444,6 +444,39 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Miguel_P1_AP2.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1501135517,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Shared.NavMenu",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": 75565181,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Shared.NavMenu",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -15167,6 +15200,11 @@
     {
       "FilePath": "/Users/miguelgondres/Projects/Miguel-P1-AP2/Pages/Index.razor",
       "TargetPath": "Pages\\Index.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "/Users/miguelgondres/Projects/Miguel-P1-AP2/Pages/ConsultaPedido.razor",
+      "TargetPath": "Pages\\ConsultaPedido.razor",
       "FileKind": "component"
     },
     {
