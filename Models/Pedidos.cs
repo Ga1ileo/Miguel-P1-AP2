@@ -28,9 +28,9 @@ namespace Miguel_P1_AP2.Models
 
         [Required(ErrorMessage ="Este campo es obligatorio.")]
         public decimal Total {get;set;}
+        
 
         public Pedidos(){
-
 
             PedidoId = 0;
             Fecha = DateTime.Now;

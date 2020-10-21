@@ -395,6 +395,39 @@
         }
       },
       {
+        "HashCode": -1501135517,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Shared.NavMenu",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": 75565181,
+        "Kind": "Components.Component",
+        "Name": "Miguel_P1_AP2.Shared.NavMenu",
+        "AssemblyName": "Miguel-P1-AP2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Miguel_P1_AP2.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Miguel_P1_AP2.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1152375552,
         "Kind": "Components.Component",
         "Name": "Miguel_P1_AP2.Shared.SurveyPrompt",
@@ -15155,7 +15188,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 900
   },
   "RootNamespace": "Miguel_P1_AP2",
   "Documents": [

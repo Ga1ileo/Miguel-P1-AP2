@@ -9,7 +9,7 @@ using Miguel_P1_AP2.DAL;
 namespace Miguel_P1_AP2.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20201012135625_initial")]
+    [Migration("20201021201825_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
