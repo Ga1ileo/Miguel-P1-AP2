@@ -1,0 +1,122 @@
+@page "/registroPedido"
+
+@using Miguel_P1_AP2.Models
+@using Miguel_P1_AP2.BLL
+
+@inject IToastService toast
+
+<EditForm Model="pedido" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator/>  
+        <div class="card">
+
+            <div class="card-header">
+                <h3>Registro de Productos</h3>
+            </div>
+
+            <div class="card-body">
+                <form>
+                    <div class="form-row align-items-center">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>PRODUCTO ID:</label>
+                                <div class="input-group">
+                                    <InputNumber @bind-Value="pedido.PedidoId" class="form-control col-4" />
+                                    <ValidationMessage For="(() => pedido.PedidoId)"></ValidationMessage>
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary input-group-text" @onclick="Buscar">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Precio:</label>
+                        <InputNumber @bind-Value="pedido.Precio" class="form-control col-5" />
+                        <ValidationMessage For="@(() => pedido.Precio)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cantidad:</label>
+                        <InputNumber @bind-Value="pedido.Cantidad" class="form-control col-5" />
+                        <ValidationMessage For="@(() => pedido.Cantidad)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total:</label>
+                        <InputNumber @bind-Value="pedido.Total" class="form-control col-5" readonly="true" />
+                        <ValidationMessage For="@(() => pedido.Total)" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fecha:</label>
+                        <InputDate @bind-Value="pedido.Fecha" class="form-control col-5"/>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-footer">
+                <div class="form-group text-center" display: inline-block>
+                    <button type="submit" class="btn btn-lg btn-success">Guardar</button>
+                </div>
+            </div>
+
+        </div>
+</EditForm>
+
+
+
+@code{
+    //Pedidos
+    Pedidos pedido = new Pedidos();
+    [Parameter]
+    public int pedidoId { get; set; }
+
+
+    protected override void OnInitialized()
+    {
+        Nuevo();
+        Pedidos auxPedido;
+        
+        if(pedidoId > 0){
+            auxPedido = PedidosBLL.Buscar(pedidoId);
+            if(auxPedido != null)
+                pedido = auxPedido;
+            else
+                toast.ShowInfo("No se ha encontrado");
+        }
+    }
+
+    private void Nuevo(){
+        this.pedido = new Pedidos();
+    }
+
+     private void Guardar()
+    {
+        bool paso;
+        paso = PedidosBLL.Guardar(pedido);
+
+        if (paso)
+        {
+            Nuevo();
+            toast.ShowSuccess("Guardado correctamente");
+        }
+        else
+        {
+            toast.ShowError("No fue posible guardar");
+        }
+
+    }
+
+     private void Buscar()
+    {
+        var encontrado = PedidosBLL.Buscar(pedido.PedidoId);
+        if (encontrado != null)
+            this.pedido = encontrado;
+        else
+        {
+            toast.ShowWarning("No encontrado");
+        }
+
+    }
+}    

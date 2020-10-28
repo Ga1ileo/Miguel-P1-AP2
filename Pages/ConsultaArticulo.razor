@@ -79,7 +79,7 @@
                     <td>@item.Precio</td>
                     <td>@item.Existencia</td>
                     <td><input type="number" class="form-control" placeholder="Cantidad"/></td>
-                    <td><button type="submit" class="btn btn-lg btn-success" @onclick="Pedir">Pedir</button></td>
+                    <td><button type="submit" class="btn btn-lg btn-success">Pedir</button></td>
                 </tr>
             }
             </tbody>
@@ -98,37 +98,6 @@
     
 
     public List<Articulos> lista = new List<Articulos>();
-    
-    //Pedidos
-    Pedidos pedido = new Pedidos();
-    [Parameter]
-    public int PedidoId { get; set; }
-    private List<Pedidos> listaPedido = new List<Pedidos>();
-    
-
-    private void Nuevo()
-    {
-        this.pedido = new Pedidos();
-    }
-
-    //Metodo que pide un Articulo
-    private void Pedir()
-    {
-        bool paso;
-        paso = PedidosBLL.Guardar(pedido);
-
-        if (paso)
-        {
-            Nuevo();
-            NumeroDePedido();
-            Console.WriteLine("Guardado Correctamente");
-        }
-        else
-        {
-            Console.WriteLine("No fue posible guardar");
-        }
-    }
-
 
     private void ConsultarDepartamentos()
     {

@@ -12,7 +12,6 @@ namespace Miguel_P1_AP2.BLL
 {
     public class PedidosBLL
     {
-
         public static bool Guardar(Pedidos pedido)
         {
             if (!Existe(pedido.PedidoId))
